@@ -1,0 +1,80 @@
+// Define colors and fonts
+$color-primary: #6c5ce7;
+$color-secondary: #fdcb6e;
+$color-background: #f0f0f0;
+$color-text: #2d3436;
+
+$font-stack: 'Helvetica Neue', Arial, sans-serif;
+$base-spacing: 16px;
+
+// Basic Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $color-background;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: $base-spacing;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $base-spacing * 2;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer-display {
+  font-size: 4rem;
+  margin-bottom: $base-spacing * 2;
+  color: $color-primary;
+  font-weight: bold;
+  text-align: center;
+}
+
+.timer-button {
+  background-color: $color-primary;
+  border: none;
+  padding: $base-spacing;
+  border-radius: $base-spacing / 2;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:not(:last-child) {
+    margin-right: $base-spacing;
+  }
+}
+
+@media (max-width: 768px) {
+  .timer-display {
+    font-size: 3rem;
+  }
+  .timer-button {
+    font-size: 1rem;
+    padding: $base-spacing;
+  }
+}
